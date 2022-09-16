@@ -21,13 +21,13 @@ const searchSong = async (e) => {
         if(artistData.artists === null) {
             $main.innerHTML = `
         <article class="artist">
-        <h2 class="artist-name">We don't have data of ${artist} :(</h2>
+        <h2 class="artist-name">We don't have data of "${artist}" :(</h2>
         </article>`;
         }else{
         $main.innerHTML = `<article class="artist">
             <img class="artist-image" style="height:400px;" src="${artistData.artists[0].strArtistThumb}">
             <h2 class="artist-name">${artistData.artists[0].strArtist}</h2>
-            <p class="artist-genre">${artistData.artists[0].strGenre} - ${artistData.artists[0].strCountryCode}</p>
+            <p class="artist-genre">${iartistData.artists[0].strGenre ? artistData.artists[0].strGenre: "Genre not avaliable"} - ${artistData.artists[0].strCountryCode}</p>
             <p class="artist-bio">${artistData.artists[0].strBiographyEN}</p>
         </article>`;
     }
